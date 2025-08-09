@@ -126,7 +126,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // messages
         guiReportTitle = getMsg("gui.report.title", "&cRapor Kategorisi Seç");
-        guiAdminTitle = getMsg("gui.admin.title", "&cBekleyen Raporlar - Sayfa %page%");
+        guiAdminTitle = getMsg("gui.admin.title", "&cBekleyen Raporlar - Sayfa");
         guiDetailTitle = getMsg("gui.detail.title", "&6Rapor Detayı #");
         guiHistoryTitle = getMsg("gui.history.title", "&6Geçmiş Raporlar - Sayfa %page%");
         guiStatsTitle = getMsg("gui.stats.title", "&eRapor İstatistikleri");
@@ -509,7 +509,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         }
 
         // Admin GUI
-        if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiAdminTitle.split("%page%")[0])).trim())) {
+        //if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiAdminTitle.split("%page%")[0])).trim())) {
+        if(title.equals(guiAdminTitle)){
             // clicked a control
             ItemStack it = e.getCurrentItem();
             System.out.println("test 1");
