@@ -1,1 +1,20 @@
-
+name: HyperRapor
+main: me.robin.hyperrapor.HyperRapor
+version: 1.0.0
+author: Robin
+description: Gelişmiş GUI tabanlı raporlama sistemi (MySQL & SQLite destekli)
+api-version: 1.8
+commands:
+  rapor:
+    description: Bir oyuncuyu raporla.
+    usage: /rapor <oyuncu>
+  raporlar:
+    description: Yetkililer için raporları görüntüleme.
+    usage: /raporlar
+permissions:
+  hyperrapor.use:
+    description: Oyuncuların rapor gönderebilmesi.
+    default: true
+  hyperrapor.admin:
+    description: Yetkililerin raporları görüntüleyebilmesi.
+    default: op
