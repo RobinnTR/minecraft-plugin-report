@@ -308,7 +308,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     }
 
     private String timeStampToString(long ts){
-        Date d = new Date(ts);
+        java.sql.Date d = new java.sql.Date(ts);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(d);
     }
