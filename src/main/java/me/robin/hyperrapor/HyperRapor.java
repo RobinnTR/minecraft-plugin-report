@@ -479,6 +479,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     // ---------- Inventory click handling ----------
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
+        Bukkit.getLogger().info("Tıklanan: " + e.getView().getTitle() + " - " + itemName);
         if (e.getWhoClicked() == null) return;
         if (!(e.getWhoClicked() instanceof Player)) return;
         Player p = (Player) e.getWhoClicked();
