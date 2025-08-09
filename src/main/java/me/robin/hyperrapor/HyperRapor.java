@@ -64,6 +64,12 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
     @Override
     public void onEnable(){
+        try {
+    Class.forName("org.sqlite.JDBC");
+} catch (ClassNotFoundException e) {
+    getLogger().severe("SQLite JDBC sürücüsü yüklenemedi!");
+    e.printStackTrace();
+        }
         // ensure plugin folder
         if (!getDataFolder().exists()) getDataFolder().mkdirs();
 
