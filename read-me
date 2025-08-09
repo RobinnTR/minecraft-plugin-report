@@ -1,0 +1,15 @@
+Nasıl kurulur / test edilir
+
+1. HyperRapor.java dosyasını me/robin/hyperrapor/ paket yapısına koyup derle. (veya sağlanan jar'ı kullan.)
+
+
+2. config.yml ve messages.yml'i plugins/HyperRapor/ içine koy.
+
+
+3. Eğer MySQL kullanacaksan config.yml içinden mysql.enabled: true yapıp bilgileri gir. Aksi halde SQLite kullanılacak (database.db).
+
+
+4. Sunucuyu başlat. Konsolda hata olursa logu buraya yapıştır.
+
+
+5. Oyuncu olarak /rapor <isim> komutunu dene. Yetkili için /raporlar (izin: hyperrapor.staff).
