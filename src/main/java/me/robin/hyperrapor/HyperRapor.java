@@ -512,6 +512,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiAdminTitle.split("%page%")[0])))){
             // clicked a control
             ItemStack it = e.getCurrentItem();
+            System.out.println("test 1");
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Prev
