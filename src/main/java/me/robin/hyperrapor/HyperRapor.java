@@ -566,7 +566,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         }
 
         // Detail GUI
-        if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiDetailTitle)))){
+        if (title.equals(guiDetailTitle)){
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -598,7 +598,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         }
 
         // History GUI
-        if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiHistoryTitle.split("%page%")[0])))){
+        if (title.equals(guiHistoryTitle)){
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -633,7 +633,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         }
 
         // Stats GUI (clicks can be implemented later if needed)
-        if (title.equals(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiStatsTitle)))){
+        if (title.equals(guiStatsTitle)){
             p.closeInventory();
             p.sendMessage(getMsg("messages.info.stats_click", "&eİstatistikler gösteriminde tıklama yok."));
             return;
