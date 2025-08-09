@@ -787,7 +787,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                 });
             } catch (Exception e){
                 e.printStackTrace();
-                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.save", "Rapor kaydedilirken bir hata oluştu."))));
+                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.save", "Rapor kaydedilirken bir hata oluştu.")));
             }
         });
     }
@@ -844,7 +844,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                         });
                     } catch (Exception ex){
                         ex.printStackTrace();
-                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.save", "Rapor kaydedilirken bir hata oluştu."))));
+                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.save", "Rapor kaydedilirken bir hata oluştu.")));
                     }
                 });
             } else if (pa.type == PendingType.APPROVE_DURATION){
@@ -919,7 +919,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
                     } catch (Exception ex){
                         ex.printStackTrace();
-                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu."))));
+                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu.")));
                     }
                 });
 
@@ -950,7 +950,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                         runSync(() -> p.sendMessage(ChatColor.GREEN + getMsg("messages.reject.success", "Rapor reddedildi ve kaydedildi.")));
                     } catch (Exception ex){
                         ex.printStackTrace();
-                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu."))));
+                        runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu.")));
                     }
                 });
             }
@@ -1047,7 +1047,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                 });
             } catch (Exception e){
                 e.printStackTrace();
-                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu."))));
+                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu.")));
             }
         });
     }
@@ -1116,7 +1116,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                 });
             } catch (Exception e){
                 e.printStackTrace();
-                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu."))));
+                runSync(() -> p.sendMessage(ChatColor.RED + getMsg("messages.error.generic", "Bir hata oluştu.")));
             }
         });
     }
