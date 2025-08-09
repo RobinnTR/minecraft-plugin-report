@@ -1,0 +1,48 @@
+# HyperRapor messages.yml
+
+gui:
+  report:
+    title: "&cRapor Kategorisi Seç"
+    other_name: "&bDiğer (Sohbete Yaz)"
+    other_lore: "Özel rapor sebebini yazmak için tıklayın."
+  admin:
+    title: "&cBekleyen Raporlar - Sayfa %page%"
+    prev: "Önceki"
+    next: "Sonraki"
+    pageinfo: "Sayfa: %page%"
+    history: "Geçmiş Raporlar"
+    stats: "İstatistikler"
+  detail:
+    title: "&6Rapor Detayı #"
+    approve: "✔ Onayla"
+    approve.lore: "Raporu onaylamak için tıklayın."
+    reject: "✖ Reddet"
+    reject.lore: "Raporu reddetmek için tıklayın."
+  history:
+    title: "&6Geçmiş Raporlar - Sayfa %page%"
+
+messages:
+  usage:
+    report: "&cKullanım: /rapor <isim>"
+  toomany: "&cBugün daha fazla rapor gönderemezsin!"
+  cooldown: "&eBiraz beklemelisin, çok hızlı raporluyorsun."
+  success: "&aRaporunuz başarıyla gönderildi."
+  notify_staff: "&6Yeni rapor: &c{hedef} &7tarafından &e{raporlayan}"
+  no_perm: "&cBu komutu kullanmak için yetkiniz yok."
+  error:
+    generic: "&cBir hata oluştu."
+    not_found: "&cRapor bulunamadı."
+    save: "&cRapor kaydedilirken bir hata oluştu."
+    no_target: "&cRapor hedefi bulunamadı."
+  other:
+    prompt: "&eLütfen rapor sebebini sohbete yazın (gizli)."
+  approve:
+    duration_prompt: "&eOnaylamak için süre girin (ör: 10m, 2h, 1d, 'kalıcı'):"
+    duration_invalid: "&cGeçersiz süre girdiniz. Örnek: 10m, 2h, 1d veya 'kalıcı'"
+    reason_prompt: "&eOnay nedeni yazın (kısa açıklama):"
+    success: "&aRapor onaylandı ve uygulandı."
+  reject:
+    prompt: "&eReddetme sebebini yazın:"
+    success: "&aRapor reddedildi ve kaydedildi."
+  info:
+    stats_click: "&eİstatistikler gösteriminde tıklama yok."
