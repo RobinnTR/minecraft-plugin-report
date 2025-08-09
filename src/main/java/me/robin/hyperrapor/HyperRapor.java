@@ -479,7 +479,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     // ---------- Inventory click handling ----------
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
-        Bukkit.getLogger().info("Tıklanan: " + e.getView().getTitle() + " - " + itemName);
+        Bukkit.getLogger().info("Tıklanan: " + e.getView().getTitle());
         if (e.getWhoClicked() == null) return;
         if (!(e.getWhoClicked() instanceof Player)) return;
         Player p = (Player) e.getWhoClicked();
@@ -488,6 +488,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // Report category GUI
         if (title.equals(guiReportTitle)){
+            System.out.println("test 3");
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -517,6 +518,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.prev", "Önceki")))){
                 // extract current page from title
                 int curPage = extractPageFromTitle(title);
+                System.out.println("test 1");
                 int newPage = Math.max(0, curPage-1);
                 openAdminGui(p, newPage, "bekliyor");
                 return;
@@ -524,6 +526,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             // Next
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.next", "Sonraki")))){
                 int curPage = extractPageFromTitle(title);
+                System.out.println("test 2");
                 int newPage = curPage+1;
                 openAdminGui(p, newPage, "bekliyor");
                 return;
