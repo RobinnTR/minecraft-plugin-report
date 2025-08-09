@@ -1,0 +1,22 @@
+# HyperRapor config.yml
+server-name: "Sunucum"
+mysql:
+  enabled: false
+  host: "localhost"
+  port: 3306
+  database: "hyperrapor"
+  user: "root"
+  password: ""
+limits:
+  dailyReports: 5
+  cooldownMinutes: 10
+messagesToShow: 5
+admin-permission: "hyperrapor.staff"
+
+# Onaylandıktan sonra çalıştırılacak komutlar (console'dan çalıştırılır)
+onay-komutlari:
+  - "ban %raporlanan% 1d"
+  - "broadcast %raporlanan% isimli oyuncu %onaylayan% tarafından %süre% %ceza-tür%"
+
+# (Opsiyonel) diğer ayarlar ekleyebilirsiniz:
+# messages.yml dosyasındaki başlıkları, eşyaları değiştirin.
