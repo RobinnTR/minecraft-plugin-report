@@ -491,7 +491,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         if (!(e.getWhoClicked() instanceof Player)) return;
         Player p = (Player) e.getWhoClicked();
         String title = e.getView().getTitle();
-        e.setCancelled(true);
 
         // Report category GUI
         if (title.equals(guiReportTitle)){
