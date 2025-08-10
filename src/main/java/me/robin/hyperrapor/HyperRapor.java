@@ -130,6 +130,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         guiReportTitle = getMsg("gui.report.title", "&cRapor Kategorisi Seç");
         guiAdminTitle = getMsg("gui.admin.title", "&cBekleyen Raporlar - Sayfa");
         guiDetailTitle = getMsg("gui.detail.title", "&6Rapor Detayı #");
+        guiDetailApprove = getMsg("gui.detail.approve", "✔ Onayla");
+        guiDetailApproveLore = getMsg("gui.detail.approve.lore", "Raporu onaylamak için tıklayın.");
         guiHistoryTitle = getMsg("gui.history.title", "&6Geçmiş Raporlar - Sayfa %page%");
         guiStatsTitle = getMsg("gui.stats.title", "&eRapor İstatistikleri");
 
@@ -568,7 +570,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
-            if (name.equals(getMsg("gui.detail.approve", "✔ Onayla"))){
+            if (name.equals(guiDetailApprove)){
+                System.out.println("test başarılı!");
                 // find report id in title
                 int id = extractReportIdFromTitle(title);
                 if (id == -1) { p.sendMessage(ChatColor.RED + "Rapor ID bulunamadı."); return; }
