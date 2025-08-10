@@ -524,7 +524,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             // Next
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.next", "Sonraki")))){
                 int curPage = extractPageFromTitle(title);
-                System.out.println("test 2");
                 int newPage = curPage+1;
                 openAdminGui(p, newPage, "bekliyor");
                 return;
@@ -564,10 +563,10 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         // Detail GUI
         if (title.equals(guiDetailTitle)){
             ItemStack it = e.getCurrentItem();
+            System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
-            System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
             if (name.equals(getMsg("gui.detail.approve", "✔ Onayla"))){
                 // find report id in title
                 int id = extractReportIdFromTitle(title);
