@@ -494,6 +494,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // Report category GUI
         if (title.equals(guiReportTitle)){
+            e.setCancelled(true);
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -516,6 +517,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         // Admin GUI
         //if (title.startsWith(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', guiAdminTitle.split("%page%")[0])).trim())) {
         if(title.equals(guiAdminTitle)){
+            e.setCancelled(true);
             // clicked a control
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
@@ -530,6 +532,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             }
             // Next
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.next", "Sonraki")))){
+                e.setCancelled(true);
                 int curPage = extractPageFromTitle(title);
                 int newPage = curPage+1;
                 openAdminGui(p, newPage, "bekliyor");
@@ -537,16 +540,19 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             }
             // History
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.history", "Geçmiş Raporlar")))){
+                e.setCancelled(true);
                 openHistoryGui(p, 0);
                 return;
             }
             // Stats
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.stats", "İstatistikler")))){
+                e.setCancelled(true);
                 openStatsGui(p);
                 return;
             }
             // Otherwise it's a report book item: parse id from displayName
             if (it.getType() == Material.BOOK){
+                e.setCancelled(true);
                 String display = ChatColor.stripColor(it.getItemMeta().getDisplayName());
                 // Expect "Rapor #id - name"
                 int hash = display.indexOf("#");
@@ -569,6 +575,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // Detail GUI
         if (title.equals(guiDetailTitle)){
+            e.setCancelled(true);
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -587,6 +594,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             }
             // Reject
            if (name.equals(guiDetailReject)){
+               e.setCancelled(true);
                 int id = extractReportIdFromTitle(title);
                 if (id == -1) { p.sendMessage(ChatColor.RED + "Rapor ID bulunamadı."); return; }
                 PendingAction pa = new PendingAction(PendingType.REJECT_REASON);
@@ -601,17 +609,20 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // History GUI
         if (title.equals(guiHistoryTitle)){
+            e.setCancelled(true);
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Prev
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.prev", "Önceki")))){
+                e.setCancelled(true);
                 int curPage = extractPageFromTitle(title);
                 int newPage = Math.max(0, curPage-1);
                 openHistoryGui(p, newPage);
                 return;
             }
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.next", "Sonraki")))){
+                e.setCancelled(true);
                 int curPage = extractPageFromTitle(title);
                 int newPage = curPage+1;
                 openHistoryGui(p, newPage);
@@ -636,6 +647,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // Stats GUI (clicks can be implemented later if needed)
         if (title.equals(guiStatsTitle)){
+            e.setCancelled(true);
             p.closeInventory();
             p.sendMessage(getMsg("messages.info.stats_click", "&eİstatistikler gösteriminde tıklama yok."));
             return;
