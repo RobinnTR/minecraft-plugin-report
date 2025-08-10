@@ -55,7 +55,9 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     private String guiAdminTitle;
     private String guiDetailTitle;
     private String guiDetailApprove;
+    private String guiDetailReject;
     private String guiDetailApproveLore;
+    private String guiDetailRejectLore;
     private String guiHistoryTitle;
     private String guiStatsTitle;
 
@@ -133,7 +135,9 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         guiAdminTitle = getMsg("gui.admin.title", "&cBekleyen Raporlar - Sayfa");
         guiDetailTitle = getMsg("gui.detail.title", "&6Rapor Detayı #");
         guiDetailApprove = getMsg("gui.detail.approve", "✔ Onayla");
+        guiDetailReject = getMsg("gui.detail.reject", "✖ Reddet");
         guiDetailApproveLore = getMsg("gui.detail.approve.lore", "Raporu onaylamak için tıklayın.");
+        guiDetailRejectLore = getMsg("gui.detail.reject.lore", "Raporu reddetmek için tıklayın.");
         guiHistoryTitle = getMsg("gui.history.title", "&6Geçmiş Raporlar - Sayfa %page%");
         guiStatsTitle = getMsg("gui.stats.title", "&eRapor İstatistikleri");
 
@@ -573,7 +577,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
             if (name.equals(guiDetailApprove)){
-                System.out.println("test başarılı!");
                 // find report id in title
                 int id = extractReportIdFromTitle(title);
                 if (id == -1) { p.sendMessage(ChatColor.RED + "Rapor ID bulunamadı."); return; }
@@ -586,7 +589,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                 return;
             }
             // Reject
-            if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.detail.reject", "✖ Reddet")))){
+           if (name.equals(guiDetailReject)){
                 int id = extractReportIdFromTitle(title);
                 if (id == -1) { p.sendMessage(ChatColor.RED + "Rapor ID bulunamadı."); return; }
                 PendingAction pa = new PendingAction(PendingType.REJECT_REASON);
@@ -740,8 +743,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                     ItemStack reject = new ItemStack(Material.WOOL,1,(short)14); // red wool
                     try { reject = new ItemStack(Material.getMaterial("WOOL"),1,(short)14); } catch (Exception ignored) {}
                     ItemMeta rm = reject.getItemMeta();
-                    rm.setDisplayName(ChatColor.RED + getMsg("gui.detail.reject", "✖ Reddet"));
-                    rm.setLore(Arrays.asList(ChatColor.GRAY + getMsg("gui.detail.reject.lore", "Raporu reddetmek için tıklayın.")));
+                    rm.setDisplayName(ChatColor.RED + guiDetailReject){);
+                    rm.setLore(Arrays.asList(ChatColor.GRAY + GuiDetailRejectLore));
                     reject.setItemMeta(rm);
                     inv.setItem(15, reject);
 
