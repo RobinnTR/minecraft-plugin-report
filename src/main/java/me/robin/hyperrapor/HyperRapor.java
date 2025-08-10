@@ -70,6 +70,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     getLogger().severe("SQLite JDBC sürücüsü yüklenemedi!");
     e.printStackTrace();
         }
+
+        System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
         // ensure plugin folder
         if (!getDataFolder().exists()) getDataFolder().mkdirs();
 
@@ -563,7 +565,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         // Detail GUI
         if (title.equals(guiDetailTitle)){
             ItemStack it = e.getCurrentItem();
-            System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
