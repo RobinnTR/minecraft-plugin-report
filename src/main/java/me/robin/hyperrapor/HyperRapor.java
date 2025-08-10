@@ -744,7 +744,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                     try { reject = new ItemStack(Material.getMaterial("WOOL"),1,(short)14); } catch (Exception ignored) {}
                     ItemMeta rm = reject.getItemMeta();
                     rm.setDisplayName(ChatColor.RED + guiDetailReject);
-                    rm.setLore(Arrays.asList(ChatColor.GRAY + GuiDetailRejectLore));
+                    rm.setLore(Arrays.asList(ChatColor.GRAY + guiDetailRejectLore));
                     reject.setItemMeta(rm);
                     inv.setItem(15, reject);
 
