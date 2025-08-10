@@ -741,7 +741,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                     ItemStack reject = new ItemStack(Material.WOOL,1,(short)14); // red wool
                     try { reject = new ItemStack(Material.getMaterial("WOOL"),1,(short)14); } catch (Exception ignored) {}
                     ItemMeta rm = reject.getItemMeta();
-                    rm.setDisplayName(ChatColor.GREEN + getMsg(guiDetailReject, "✔ Onayla"));
+                    rm.setDisplayName(ChatColor.GREEN + getMsg("gui.detail.reject", "✔ Onayla"));
                     rm.setLore(Arrays.asList(ChatColor.GRAY + getMsg("gui.detail.reject.lore", "Raporu onaylamak için tıklayın.")));
                     reject.setItemMeta(rm);
                     inv.setItem(15, reject);
