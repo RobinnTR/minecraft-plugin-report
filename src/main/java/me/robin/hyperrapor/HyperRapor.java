@@ -479,7 +479,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     // ---------- Inventory click handling ----------
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
-        Bukkit.getLogger().info("Tıklanan: " + e.getView().getTitle());
         if (e.getWhoClicked() == null) return;
         if (!(e.getWhoClicked() instanceof Player)) return;
         Player p = (Player) e.getWhoClicked();
@@ -488,7 +487,6 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
         // Report category GUI
         if (title.equals(guiReportTitle)){
-            System.out.println("test 3");
             ItemStack it = e.getCurrentItem();
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
@@ -513,14 +511,12 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
         if(title.equals(guiAdminTitle)){
             // clicked a control
             ItemStack it = e.getCurrentItem();
-            System.out.println("test 1");
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Prev
             if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.admin.prev", "Önceki")))){
                 // extract current page from title
                 int curPage = extractPageFromTitle(title);
-                System.out.println("test 1");
                 int newPage = Math.max(0, curPage-1);
                 openAdminGui(p, newPage, "bekliyor");
                 return;
@@ -571,7 +567,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
-            if (name.equalsIgnoreCase(ChatColor.stripColor(getMsg("gui.detail.approve", "✔ Onayla")))){
+            if (name.equals(getMsg("gui.detail.approve", "✔ Onayla"))){
                 // find report id in title
                 int id = extractReportIdFromTitle(title);
                 if (id == -1) { p.sendMessage(ChatColor.RED + "Rapor ID bulunamadı."); return; }
