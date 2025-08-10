@@ -706,7 +706,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
 
                 // build GUI on main thread
                 runSync(() -> {
-                    String title = ChatColor.stripColor(guiDetailTitle) + reportId;
+                    String title = ChatColor.stripColor(guiDetailTitle);
                     Inventory inv = Bukkit.createInventory(null, 27, title); // 3 rows
                     // Info item
                     ItemStack info = new ItemStack(Material.BOOK);
