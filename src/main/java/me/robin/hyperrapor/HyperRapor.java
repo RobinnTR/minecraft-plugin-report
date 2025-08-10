@@ -54,6 +54,8 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     private String guiReportTitle;
     private String guiAdminTitle;
     private String guiDetailTitle;
+    private String guiDetailApprove;
+    private String guiDetailApproveLore;
     private String guiHistoryTitle;
     private String guiStatsTitle;
 
