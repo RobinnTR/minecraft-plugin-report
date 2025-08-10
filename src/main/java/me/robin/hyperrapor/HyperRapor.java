@@ -73,7 +73,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
     e.printStackTrace();
         }
 
-        System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
+        System.out.println("approve messsage: " + getMsg(guiDetailApprove, ""));
         // ensure plugin folder
         if (!getDataFolder().exists()) getDataFolder().mkdirs();
 
@@ -731,7 +731,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
                     ItemStack approve = new ItemStack(Material.WOOL,1,(short)5); // green wool
                     try { approve = new ItemStack(Material.getMaterial("WOOL"),1,(short)5); } catch (Exception ignored) {}
                     ItemMeta am = approve.getItemMeta();
-                    am.setDisplayName(ChatColor.GREEN + getMsg("gui.detail.approve", "✔ Onayla"));
+                    am.setDisplayName(ChatColor.GREEN + getMsg(guiDetailApprove, "✔ Onayla"));
                     am.setLore(Arrays.asList(ChatColor.GRAY + getMsg("gui.detail.approve.lore", "Raporu onaylamak için tıklayın.")));
                     approve.setItemMeta(am);
                     inv.setItem(11, approve);
