@@ -567,6 +567,7 @@ public class HyperRapor extends JavaPlugin implements Listener, CommandExecutor 
             if (it == null || !it.hasItemMeta()) return;
             String name = ChatColor.stripColor(it.getItemMeta().getDisplayName());
             // Approve
+            System.out.println("approve messsage: " + getMsg("gui.detail.approve", ""));
             if (name.equals(getMsg("gui.detail.approve", "✔ Onayla"))){
                 // find report id in title
                 int id = extractReportIdFromTitle(title);
